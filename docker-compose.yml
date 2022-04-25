@@ -1,0 +1,32 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./docker/backend/Dockerfile
+    container_name: backend_container
+    tty: true
+    # volumes:
+    #   -
+    # ports:
+    # -
+  frontend:
+    build:
+      context: .
+      dockerfile: ./docker/frontend/Dockerfile
+    container_name: frontend_container
+    tty: true
+    # volumes:
+    #   -
+    # command: command
+    # ports:
+    # -
+  mysql:
+    build:
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
+    container_name: mysql_container
+    # volumes:
+    #   -
+    # ports:
+    #   -
