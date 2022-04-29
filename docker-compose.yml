@@ -6,8 +6,8 @@ services:
       dockerfile: ./docker/backend/Dockerfile
     container_name: backend_container
     tty: true
-    # volumes:
-    #   -
+    volumes:
+      - ./backend:/app/backend
     # ports:
     # -
   frontend:
@@ -16,8 +16,8 @@ services:
       dockerfile: ./docker/frontend/Dockerfile
     container_name: frontend_container
     tty: true
-    # volumes:
-    #   -
+    volumes:
+      - ./frontend:/app/frontend
     # command: command
     # ports:
     # -
@@ -26,6 +26,8 @@ services:
       context: .
       dockerfile: ./docker/mysql/Dockerfile
     container_name: mysql_container
+    # environment:
+    #   - name=value
     # volumes:
     #   -
     # ports:
